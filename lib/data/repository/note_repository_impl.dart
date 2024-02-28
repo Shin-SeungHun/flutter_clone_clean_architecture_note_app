@@ -4,37 +4,33 @@ import 'package:flutter_clone_clean_architecture_note_app/domain/repository/note
 
 class NoteRepositoryImpl implements NoteRepository {
   final NoteDb db;
+
   const NoteRepositoryImpl({
     required this.db,
   });
 
   @override
-  Future<void> deleteNote({required Note note}) {
-    // TODO: implement deleteNote
-    throw UnimplementedError();
+  Future<void> deleteNote({required Note note}) async {
+    await db.deleteNote(note: note);
   }
 
   @override
-  Future<Note> getNoteById({required int id}) {
-    // TODO: implement getNoteById
-    throw UnimplementedError();
+  Future<Note?> getNoteById({required int id}) async {
+    return await db.getNoteById(id: id);
   }
 
   @override
-  Future<List<Note>> getNotes() {
-    // TODO: implement getNotes
-    throw UnimplementedError();
+  Future<List<Note>> getNotes() async {
+    return await db.getNotes();
   }
 
   @override
-  Future<void> insertNote({required Note note}) {
-    // TODO: implement insertNote
-    throw UnimplementedError();
+  Future<void> insertNote({required Note note}) async {
+    await db.insertNote(note: note);
   }
 
   @override
-  Future<void> updateNote({required Note note}) {
-    // TODO: implement updateNote
-    throw UnimplementedError();
+  Future<void> updateNote({required Note note}) async {
+    await db.updateNote(note: note);
   }
 }

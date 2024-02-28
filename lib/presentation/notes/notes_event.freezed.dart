@@ -213,7 +213,7 @@ class __$$DeleteNotesImplCopyWithImpl<T, $Res>
     Object? note = null,
   }) {
     return _then(_$DeleteNotesImpl<T>(
-      null == note
+      note: null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as Note,
@@ -232,7 +232,7 @@ class __$$DeleteNotesImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$DeleteNotesImpl<T> implements DeleteNotes<T> {
-  const _$DeleteNotesImpl(this.note);
+  const _$DeleteNotesImpl({required this.note});
 
   @override
   final Note note;
@@ -330,7 +330,7 @@ class _$DeleteNotesImpl<T> implements DeleteNotes<T> {
 }
 
 abstract class DeleteNotes<T> implements NotesEvent<T> {
-  const factory DeleteNotes(final Note note) = _$DeleteNotesImpl<T>;
+  const factory DeleteNotes({required final Note note}) = _$DeleteNotesImpl<T>;
 
   Note get note;
   @JsonKey(ignore: true)

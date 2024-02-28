@@ -8,7 +8,7 @@ part 'notes_event.freezed.dart';
 sealed class NotesEvent<T> with _$NotesEvent<T> {
   const factory NotesEvent.loadNotes() = LoadNotes;
 
-  const factory NotesEvent.deleteNote(Note note) = DeleteNotes;
+  const factory NotesEvent.deleteNote({required Note note}) = DeleteNotes;
 
   const factory NotesEvent.restoreNote() = RestoreNotes;
 }

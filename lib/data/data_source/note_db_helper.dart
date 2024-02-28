@@ -1,10 +1,10 @@
 import 'package:flutter_clone_clean_architecture_note_app/domain/model/note.dart';
 import 'package:sqflite/sqflite.dart';
 
-class NoteDb {
+class NoteDbHelper {
   Database db;
 
-  NoteDb({
+  NoteDbHelper({
     required this.db,
   });
 

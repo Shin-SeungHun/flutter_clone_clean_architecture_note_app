@@ -1,9 +1,8 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_clean_architecture_note_app/domain/model/note.dart';
 import 'package:flutter_clone_clean_architecture_note_app/domain/repository/note_repository.dart';
 import 'package:flutter_clone_clean_architecture_note_app/presentation/notes/notes_event.dart';
+import 'package:flutter_clone_clean_architecture_note_app/presentation/notes/notes_state.dart';
 
 class NotesViewModel extends ChangeNotifier {
   final NoteRepository _repository;
@@ -12,10 +11,10 @@ class NotesViewModel extends ChangeNotifier {
     required NoteRepository repository,
   }) : _repository = repository;
 
-  List<Note> _notes = [];
-  Note? _recentlyDeletedNote;
+  NotesState _state = const NotesState(notes: []);
 
-  UnmodifiableListView<Note> get notes => UnmodifiableListView(_notes);
+  NotesState get state => _state;
+  Note? _recentlyDeletedNote;
 
   void onEvent({required NotesEvent event}) {
     event.when(
@@ -27,7 +26,7 @@ class NotesViewModel extends ChangeNotifier {
 
   Future<void> _loadNotes() async {
     List<Note> notes = await _repository.getNotes();
-    _notes = notes;
+    _state = state.copyWith(notes: notes);
     notifyListeners();
   }
 

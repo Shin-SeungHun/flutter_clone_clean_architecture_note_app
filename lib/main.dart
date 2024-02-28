@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_clean_architecture_note_app/presentation/notes/notes_screen.dart';
+import 'package:flutter_clone_clean_architecture_note_app/ui/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +14,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        unselectedWidgetColor: Colors.white,
+        primaryColor: Colors.white,
+        scaffoldBackgroundColor: darkGray,
+        canvasColor: darkGray,
+        floatingActionButtonTheme: Theme.of(context).floatingActionButtonTheme.copyWith(
+              backgroundColor: Colors.white,
+              foregroundColor: darkGray,
+            ),
+        appBarTheme: Theme.of(context).appBarTheme.copyWith(
+              backgroundColor: darkGray,
+            ),
+        textTheme: Theme.of(context).textTheme.apply(
+              bodyColor: Colors.white,
+            ),
       ),
       home: const NotesScreen(),
     );

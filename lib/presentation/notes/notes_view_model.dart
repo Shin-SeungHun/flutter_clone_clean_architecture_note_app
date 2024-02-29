@@ -9,7 +9,9 @@ class NotesViewModel extends ChangeNotifier {
 
   NotesViewModel({
     required NoteRepository repository,
-  }) : _repository = repository;
+  }) : _repository = repository{
+    _loadNotes();
+  }
 
   NotesState _state = const NotesState(notes: []);
 

@@ -30,7 +30,7 @@ class NoteItem extends StatelessWidget {
               children: [
                 Text(
                   note.title,
-                  style: Theme.of(context).textTheme.headlineSmall,
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

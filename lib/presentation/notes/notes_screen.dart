@@ -46,7 +46,21 @@ class NotesScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: state.notes
-              .map((note) => NoteItem(
+              .map(
+                (note) => GestureDetector(
+                  onTap: () async {
+                    bool? isSaved = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AddEditNoteScreen(note: note),
+                      ),
+                    );
+
+                    if (isSaved != null && isSaved) {
+                      viewModel.onEvent(event: const NotesEvent.loadNotes());
+                    }
+                  },
+                  child: NoteItem(
                     note: note,
                     onDeleteTap: () {
                       viewModel.onEvent(event: NotesEvent.deleteNote(note: note));
@@ -61,7 +75,9 @@ class NotesScreen extends StatelessWidget {
 
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
-                  ))
+                  ),
+                ),
+              )
               .toList(),
         ),
       ),

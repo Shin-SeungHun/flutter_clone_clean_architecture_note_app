@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_clean_architecture_note_app/domain/model/note.dart';
-import 'package:flutter_clone_clean_architecture_note_app/domain/repository/note_repository.dart';
+import 'package:flutter_clone_clean_architecture_note_app/domain/use_case/use_cases.dart';
 import 'package:flutter_clone_clean_architecture_note_app/presentation/notes/notes_event.dart';
 import 'package:flutter_clone_clean_architecture_note_app/presentation/notes/notes_state.dart';
 
 class NotesViewModel extends ChangeNotifier {
-  final NoteRepository _repository;
+  final UseCases _useCases;
 
-  NotesViewModel({
-    required NoteRepository repository,
-  }) : _repository = repository {
+  NotesViewModel({required UseCases useCases}) : _useCases = useCases {
     _loadNotes();
   }
 
@@ -27,21 +25,20 @@ class NotesViewModel extends ChangeNotifier {
   }
 
   Future<void> _loadNotes() async {
-    List<Note> notes = await _repository.getNotes();
-    notes.sort((a, b) => -a.timestamp.compareTo(b.timestamp));
+    List<Note> notes = await _useCases.getNotesUseCase.call();
     _state = state.copyWith(notes: notes);
     notifyListeners();
   }
 
   Future<void> _deleteNote(Note note) async {
-    await _repository.deleteNote(note: note);
+    await _useCases.deleteNoteUseCase.call(note: note);
     _recentlyDeletedNote = note;
     await _loadNotes();
   }
 
   Future<void> _restoreNote() async {
     if (_recentlyDeletedNote != null) {
-      await _repository.insertNote(note: _recentlyDeletedNote!);
+      await _useCases.insertNoteUseCase.call(note: _recentlyDeletedNote!);
       _recentlyDeletedNote = null;
       _loadNotes();
     }

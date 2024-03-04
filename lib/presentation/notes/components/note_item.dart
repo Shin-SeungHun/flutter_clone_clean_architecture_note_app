@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_clone_clean_architecture_note_app/domain/model/note.dart';
 
 class NoteItem extends StatelessWidget {

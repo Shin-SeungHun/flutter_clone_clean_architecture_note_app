@@ -9,7 +9,7 @@ class NotesViewModel extends ChangeNotifier {
 
   NotesViewModel({
     required NoteRepository repository,
-  }) : _repository = repository{
+  }) : _repository = repository {
     _loadNotes();
   }
 
@@ -28,12 +28,14 @@ class NotesViewModel extends ChangeNotifier {
 
   Future<void> _loadNotes() async {
     List<Note> notes = await _repository.getNotes();
+    notes.sort((a, b) => -a.timestamp.compareTo(b.timestamp));
     _state = state.copyWith(notes: notes);
     notifyListeners();
   }
 
   Future<void> _deleteNote(Note note) async {
     await _repository.deleteNote(note: note);
+    _recentlyDeletedNote = note;
     await _loadNotes();
   }
 
@@ -41,7 +43,6 @@ class NotesViewModel extends ChangeNotifier {
     if (_recentlyDeletedNote != null) {
       await _repository.insertNote(note: _recentlyDeletedNote!);
       _recentlyDeletedNote = null;
-
       _loadNotes();
     }
   }

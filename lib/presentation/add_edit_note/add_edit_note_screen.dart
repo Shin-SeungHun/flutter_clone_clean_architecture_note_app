@@ -69,7 +69,7 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
           print('widget.note : ${widget.note}');
           viewModel.onEvent(
               event: AddEditNoteEvent.saveNote(
-            widget.note == null ? null : widget.note!.id,
+            widget.note?.id,
             title: _titleController.text,
             content: _contentController.text,
           ));

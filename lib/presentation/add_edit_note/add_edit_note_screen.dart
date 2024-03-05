@@ -64,7 +64,9 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
     final AddEditNoteViewModel viewModel = context.watch<AddEditNoteViewModel>();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: ()  {
+          print('id : ${widget.note?.id}');
+          print('widget.note : ${widget.note}');
           viewModel.onEvent(
               event: AddEditNoteEvent.saveNote(
             widget.note == null ? null : widget.note!.id,
@@ -78,7 +80,7 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
         padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 48),
         color: Color(viewModel.color),
         duration: const Duration(milliseconds: 500),
-        child: Column(
+        child: ListView(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

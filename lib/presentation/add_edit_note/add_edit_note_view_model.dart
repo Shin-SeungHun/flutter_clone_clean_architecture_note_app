@@ -38,6 +38,7 @@ class AddEditNoteViewModel extends ChangeNotifier {
       _eventController.add(const AddEditNoteUiEvent.showSnackBar(message: '제목이나 내용이 비어 있습니다.'));
       return;
     }
+
     if (id == null) {
       await _repository.insertNote(
         note: Note(
@@ -50,9 +51,10 @@ class AddEditNoteViewModel extends ChangeNotifier {
     } else {
       await _repository.updateNote(
         note: Note(
+          id: id,
           title: title,
           content: content,
-          color: color,
+          color: _color,
           timestamp: DateTime.now().millisecondsSinceEpoch,
         ),
       );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_clean_architecture_note_app/domain/model/note.dart';
+import 'package:flutter_clone_clean_architecture_note_app/ui/colors.dart';
 
 class NoteItem extends StatelessWidget {
   final Note note;
@@ -29,14 +30,14 @@ class NoteItem extends StatelessWidget {
               children: [
                 Text(
                   note.title,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
+                  style: Theme.of(context).textTheme.headlineSmall?.apply(color: darkGray),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 8),
                 Text(
                   note.content,
-                  style: Theme.of(context).textTheme.bodySmall,
+                  style: Theme.of(context).textTheme.bodySmall?.apply(color: darkGray),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),

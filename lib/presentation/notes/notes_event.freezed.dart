@@ -22,6 +22,7 @@ mixin _$NotesEvent<T> {
     required TResult Function(Note note) deleteNote,
     required TResult Function() restoreNote,
     required TResult Function(NoteOrder noteOrder) changeOrder,
+    required TResult Function() toggleOrderSection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$NotesEvent<T> {
     TResult? Function(Note note)? deleteNote,
     TResult? Function()? restoreNote,
     TResult? Function(NoteOrder noteOrder)? changeOrder,
+    TResult? Function()? toggleOrderSection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$NotesEvent<T> {
     TResult Function(Note note)? deleteNote,
     TResult Function()? restoreNote,
     TResult Function(NoteOrder noteOrder)? changeOrder,
+    TResult Function()? toggleOrderSection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$NotesEvent<T> {
     required TResult Function(DeleteNotes<T> value) deleteNote,
     required TResult Function(RestoreNotes<T> value) restoreNote,
     required TResult Function(ChangeOrder<T> value) changeOrder,
+    required TResult Function(ToggleOrderSection<T> value) toggleOrderSection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$NotesEvent<T> {
     TResult? Function(DeleteNotes<T> value)? deleteNote,
     TResult? Function(RestoreNotes<T> value)? restoreNote,
     TResult? Function(ChangeOrder<T> value)? changeOrder,
+    TResult? Function(ToggleOrderSection<T> value)? toggleOrderSection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$NotesEvent<T> {
     TResult Function(DeleteNotes<T> value)? deleteNote,
     TResult Function(RestoreNotes<T> value)? restoreNote,
     TResult Function(ChangeOrder<T> value)? changeOrder,
+    TResult Function(ToggleOrderSection<T> value)? toggleOrderSection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +134,7 @@ class _$LoadNotesImpl<T> implements LoadNotes<T> {
     required TResult Function(Note note) deleteNote,
     required TResult Function() restoreNote,
     required TResult Function(NoteOrder noteOrder) changeOrder,
+    required TResult Function() toggleOrderSection,
   }) {
     return loadNotes();
   }
@@ -139,6 +146,7 @@ class _$LoadNotesImpl<T> implements LoadNotes<T> {
     TResult? Function(Note note)? deleteNote,
     TResult? Function()? restoreNote,
     TResult? Function(NoteOrder noteOrder)? changeOrder,
+    TResult? Function()? toggleOrderSection,
   }) {
     return loadNotes?.call();
   }
@@ -150,6 +158,7 @@ class _$LoadNotesImpl<T> implements LoadNotes<T> {
     TResult Function(Note note)? deleteNote,
     TResult Function()? restoreNote,
     TResult Function(NoteOrder noteOrder)? changeOrder,
+    TResult Function()? toggleOrderSection,
     required TResult orElse(),
   }) {
     if (loadNotes != null) {
@@ -165,6 +174,7 @@ class _$LoadNotesImpl<T> implements LoadNotes<T> {
     required TResult Function(DeleteNotes<T> value) deleteNote,
     required TResult Function(RestoreNotes<T> value) restoreNote,
     required TResult Function(ChangeOrder<T> value) changeOrder,
+    required TResult Function(ToggleOrderSection<T> value) toggleOrderSection,
   }) {
     return loadNotes(this);
   }
@@ -176,6 +186,7 @@ class _$LoadNotesImpl<T> implements LoadNotes<T> {
     TResult? Function(DeleteNotes<T> value)? deleteNote,
     TResult? Function(RestoreNotes<T> value)? restoreNote,
     TResult? Function(ChangeOrder<T> value)? changeOrder,
+    TResult? Function(ToggleOrderSection<T> value)? toggleOrderSection,
   }) {
     return loadNotes?.call(this);
   }
@@ -187,6 +198,7 @@ class _$LoadNotesImpl<T> implements LoadNotes<T> {
     TResult Function(DeleteNotes<T> value)? deleteNote,
     TResult Function(RestoreNotes<T> value)? restoreNote,
     TResult Function(ChangeOrder<T> value)? changeOrder,
+    TResult Function(ToggleOrderSection<T> value)? toggleOrderSection,
     required TResult orElse(),
   }) {
     if (loadNotes != null) {
@@ -279,6 +291,7 @@ class _$DeleteNotesImpl<T> implements DeleteNotes<T> {
     required TResult Function(Note note) deleteNote,
     required TResult Function() restoreNote,
     required TResult Function(NoteOrder noteOrder) changeOrder,
+    required TResult Function() toggleOrderSection,
   }) {
     return deleteNote(note);
   }
@@ -290,6 +303,7 @@ class _$DeleteNotesImpl<T> implements DeleteNotes<T> {
     TResult? Function(Note note)? deleteNote,
     TResult? Function()? restoreNote,
     TResult? Function(NoteOrder noteOrder)? changeOrder,
+    TResult? Function()? toggleOrderSection,
   }) {
     return deleteNote?.call(note);
   }
@@ -301,6 +315,7 @@ class _$DeleteNotesImpl<T> implements DeleteNotes<T> {
     TResult Function(Note note)? deleteNote,
     TResult Function()? restoreNote,
     TResult Function(NoteOrder noteOrder)? changeOrder,
+    TResult Function()? toggleOrderSection,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -316,6 +331,7 @@ class _$DeleteNotesImpl<T> implements DeleteNotes<T> {
     required TResult Function(DeleteNotes<T> value) deleteNote,
     required TResult Function(RestoreNotes<T> value) restoreNote,
     required TResult Function(ChangeOrder<T> value) changeOrder,
+    required TResult Function(ToggleOrderSection<T> value) toggleOrderSection,
   }) {
     return deleteNote(this);
   }
@@ -327,6 +343,7 @@ class _$DeleteNotesImpl<T> implements DeleteNotes<T> {
     TResult? Function(DeleteNotes<T> value)? deleteNote,
     TResult? Function(RestoreNotes<T> value)? restoreNote,
     TResult? Function(ChangeOrder<T> value)? changeOrder,
+    TResult? Function(ToggleOrderSection<T> value)? toggleOrderSection,
   }) {
     return deleteNote?.call(this);
   }
@@ -338,6 +355,7 @@ class _$DeleteNotesImpl<T> implements DeleteNotes<T> {
     TResult Function(DeleteNotes<T> value)? deleteNote,
     TResult Function(RestoreNotes<T> value)? restoreNote,
     TResult Function(ChangeOrder<T> value)? changeOrder,
+    TResult Function(ToggleOrderSection<T> value)? toggleOrderSection,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -398,6 +416,7 @@ class _$RestoreNotesImpl<T> implements RestoreNotes<T> {
     required TResult Function(Note note) deleteNote,
     required TResult Function() restoreNote,
     required TResult Function(NoteOrder noteOrder) changeOrder,
+    required TResult Function() toggleOrderSection,
   }) {
     return restoreNote();
   }
@@ -409,6 +428,7 @@ class _$RestoreNotesImpl<T> implements RestoreNotes<T> {
     TResult? Function(Note note)? deleteNote,
     TResult? Function()? restoreNote,
     TResult? Function(NoteOrder noteOrder)? changeOrder,
+    TResult? Function()? toggleOrderSection,
   }) {
     return restoreNote?.call();
   }
@@ -420,6 +440,7 @@ class _$RestoreNotesImpl<T> implements RestoreNotes<T> {
     TResult Function(Note note)? deleteNote,
     TResult Function()? restoreNote,
     TResult Function(NoteOrder noteOrder)? changeOrder,
+    TResult Function()? toggleOrderSection,
     required TResult orElse(),
   }) {
     if (restoreNote != null) {
@@ -435,6 +456,7 @@ class _$RestoreNotesImpl<T> implements RestoreNotes<T> {
     required TResult Function(DeleteNotes<T> value) deleteNote,
     required TResult Function(RestoreNotes<T> value) restoreNote,
     required TResult Function(ChangeOrder<T> value) changeOrder,
+    required TResult Function(ToggleOrderSection<T> value) toggleOrderSection,
   }) {
     return restoreNote(this);
   }
@@ -446,6 +468,7 @@ class _$RestoreNotesImpl<T> implements RestoreNotes<T> {
     TResult? Function(DeleteNotes<T> value)? deleteNote,
     TResult? Function(RestoreNotes<T> value)? restoreNote,
     TResult? Function(ChangeOrder<T> value)? changeOrder,
+    TResult? Function(ToggleOrderSection<T> value)? toggleOrderSection,
   }) {
     return restoreNote?.call(this);
   }
@@ -457,6 +480,7 @@ class _$RestoreNotesImpl<T> implements RestoreNotes<T> {
     TResult Function(DeleteNotes<T> value)? deleteNote,
     TResult Function(RestoreNotes<T> value)? restoreNote,
     TResult Function(ChangeOrder<T> value)? changeOrder,
+    TResult Function(ToggleOrderSection<T> value)? toggleOrderSection,
     required TResult orElse(),
   }) {
     if (restoreNote != null) {
@@ -550,6 +574,7 @@ class _$ChangeOrderImpl<T> implements ChangeOrder<T> {
     required TResult Function(Note note) deleteNote,
     required TResult Function() restoreNote,
     required TResult Function(NoteOrder noteOrder) changeOrder,
+    required TResult Function() toggleOrderSection,
   }) {
     return changeOrder(noteOrder);
   }
@@ -561,6 +586,7 @@ class _$ChangeOrderImpl<T> implements ChangeOrder<T> {
     TResult? Function(Note note)? deleteNote,
     TResult? Function()? restoreNote,
     TResult? Function(NoteOrder noteOrder)? changeOrder,
+    TResult? Function()? toggleOrderSection,
   }) {
     return changeOrder?.call(noteOrder);
   }
@@ -572,6 +598,7 @@ class _$ChangeOrderImpl<T> implements ChangeOrder<T> {
     TResult Function(Note note)? deleteNote,
     TResult Function()? restoreNote,
     TResult Function(NoteOrder noteOrder)? changeOrder,
+    TResult Function()? toggleOrderSection,
     required TResult orElse(),
   }) {
     if (changeOrder != null) {
@@ -587,6 +614,7 @@ class _$ChangeOrderImpl<T> implements ChangeOrder<T> {
     required TResult Function(DeleteNotes<T> value) deleteNote,
     required TResult Function(RestoreNotes<T> value) restoreNote,
     required TResult Function(ChangeOrder<T> value) changeOrder,
+    required TResult Function(ToggleOrderSection<T> value) toggleOrderSection,
   }) {
     return changeOrder(this);
   }
@@ -598,6 +626,7 @@ class _$ChangeOrderImpl<T> implements ChangeOrder<T> {
     TResult? Function(DeleteNotes<T> value)? deleteNote,
     TResult? Function(RestoreNotes<T> value)? restoreNote,
     TResult? Function(ChangeOrder<T> value)? changeOrder,
+    TResult? Function(ToggleOrderSection<T> value)? toggleOrderSection,
   }) {
     return changeOrder?.call(this);
   }
@@ -609,6 +638,7 @@ class _$ChangeOrderImpl<T> implements ChangeOrder<T> {
     TResult Function(DeleteNotes<T> value)? deleteNote,
     TResult Function(RestoreNotes<T> value)? restoreNote,
     TResult Function(ChangeOrder<T> value)? changeOrder,
+    TResult Function(ToggleOrderSection<T> value)? toggleOrderSection,
     required TResult orElse(),
   }) {
     if (changeOrder != null) {
@@ -626,4 +656,125 @@ abstract class ChangeOrder<T> implements NotesEvent<T> {
   @JsonKey(ignore: true)
   _$$ChangeOrderImplCopyWith<T, _$ChangeOrderImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ToggleOrderSectionImplCopyWith<T, $Res> {
+  factory _$$ToggleOrderSectionImplCopyWith(_$ToggleOrderSectionImpl<T> value,
+          $Res Function(_$ToggleOrderSectionImpl<T>) then) =
+      __$$ToggleOrderSectionImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ToggleOrderSectionImplCopyWithImpl<T, $Res>
+    extends _$NotesEventCopyWithImpl<T, $Res, _$ToggleOrderSectionImpl<T>>
+    implements _$$ToggleOrderSectionImplCopyWith<T, $Res> {
+  __$$ToggleOrderSectionImplCopyWithImpl(_$ToggleOrderSectionImpl<T> _value,
+      $Res Function(_$ToggleOrderSectionImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ToggleOrderSectionImpl<T> implements ToggleOrderSection<T> {
+  const _$ToggleOrderSectionImpl();
+
+  @override
+  String toString() {
+    return 'NotesEvent<$T>.toggleOrderSection()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ToggleOrderSectionImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadNotes,
+    required TResult Function(Note note) deleteNote,
+    required TResult Function() restoreNote,
+    required TResult Function(NoteOrder noteOrder) changeOrder,
+    required TResult Function() toggleOrderSection,
+  }) {
+    return toggleOrderSection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadNotes,
+    TResult? Function(Note note)? deleteNote,
+    TResult? Function()? restoreNote,
+    TResult? Function(NoteOrder noteOrder)? changeOrder,
+    TResult? Function()? toggleOrderSection,
+  }) {
+    return toggleOrderSection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadNotes,
+    TResult Function(Note note)? deleteNote,
+    TResult Function()? restoreNote,
+    TResult Function(NoteOrder noteOrder)? changeOrder,
+    TResult Function()? toggleOrderSection,
+    required TResult orElse(),
+  }) {
+    if (toggleOrderSection != null) {
+      return toggleOrderSection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadNotes<T> value) loadNotes,
+    required TResult Function(DeleteNotes<T> value) deleteNote,
+    required TResult Function(RestoreNotes<T> value) restoreNote,
+    required TResult Function(ChangeOrder<T> value) changeOrder,
+    required TResult Function(ToggleOrderSection<T> value) toggleOrderSection,
+  }) {
+    return toggleOrderSection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadNotes<T> value)? loadNotes,
+    TResult? Function(DeleteNotes<T> value)? deleteNote,
+    TResult? Function(RestoreNotes<T> value)? restoreNote,
+    TResult? Function(ChangeOrder<T> value)? changeOrder,
+    TResult? Function(ToggleOrderSection<T> value)? toggleOrderSection,
+  }) {
+    return toggleOrderSection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadNotes<T> value)? loadNotes,
+    TResult Function(DeleteNotes<T> value)? deleteNote,
+    TResult Function(RestoreNotes<T> value)? restoreNote,
+    TResult Function(ChangeOrder<T> value)? changeOrder,
+    TResult Function(ToggleOrderSection<T> value)? toggleOrderSection,
+    required TResult orElse(),
+  }) {
+    if (toggleOrderSection != null) {
+      return toggleOrderSection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ToggleOrderSection<T> implements NotesEvent<T> {
+  const factory ToggleOrderSection() = _$ToggleOrderSectionImpl<T>;
 }

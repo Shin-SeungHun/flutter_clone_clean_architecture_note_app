@@ -11,4 +11,6 @@ sealed class NotesEvent<T> with _$NotesEvent<T> {
   const factory NotesEvent.deleteNote({required Note note}) = DeleteNotes;
   const factory NotesEvent.restoreNote() = RestoreNotes;
   const factory NotesEvent.changeOrder({required NoteOrder noteOrder}) = ChangeOrder;
+  const factory NotesEvent.toggleOrderSection() = ToggleOrderSection;
+
 }
